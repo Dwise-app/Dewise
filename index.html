@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dwise Consultancy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+
+<header>
+  <h1>Dwise Consultancy</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#book">Book</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+    <a href="#admin">Admin</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <h2>Professional Consulting for Your Future</h2>
+  <p>Interview Help • Career Guidance • Visa Support • Financial Consulting • IT Consulting</p>
+  <a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Dwise Consultancy offers expert guidance in interview preparation, career planning, visa support, financial consulting, and IT consulting. We provide trusted and personalized solutions for students and professionals.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+
+  <ul class="services-list">
+    <li>📌 Interview Preparation</li>
+    <li>📌 Career Guidance</li>
+    <li>📌 Visa Support</li>
+    <li>📌 Financial Consulting</li>
+    <li>📌 IT Consulting</li>
+  </ul>
+</section>
+
+<section id="book">
+  <h2>Book an Appointment</h2>
+
+  <form id="bookForm">
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="tel" placeholder="Phone Number" required />
+    <select required>
+      <option value="">Select Service</option>
+      <option>Interview Help</option>
+      <option>Career Guidance</option>
+      <option>Visa Support</option>
+      <option>Financial Consulting</option>
+      <option>IT Consulting</option>
+    </select>
+    <input type="date" required />
+    <button type="submit">Submit Booking</button>
+  </form>
+</section>
+
+<section id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="testimonial">
+    <p>“Dwise Consultancy helped me clear my interview in just one week!”</p>
+    <strong>- Rajesh</strong>
+  </div>
+  <div class="testimonial">
+    <p>“Great visa support. Smooth and fast process.”</p>
+    <strong>- Anitha</strong>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <form id="enquiryForm">
+    <input type="text" placeholder="Name" required />
+    <input type="email" placeholder="Email" required />
+    <textarea placeholder="Message" required></textarea>
+    <button type="submit">Send Enquiry</button>
+  </form>
+
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+    Chat On WhatsApp
+  </a>
+</section>
+
+<section id="admin">
+  <h2>Admin Dashboard</h2>
+  <p>All enquiries submitted will appear here.</p>
+  <ul id="adminList"></ul>
+</section>
+
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+
+</body>
+</html>
