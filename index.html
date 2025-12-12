@@ -1,108 +1,265 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dwise Consultancy</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewise | Professional Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- GLOBAL STYLES (Bluvaron Theme) --- */
+        :root {
+            --primary-color: #0056b3; /* Professional Blue */
+            --secondary-color: #004494;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { color: #2c3e50; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- NAVIGATION BAR --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-color); }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 68, 148, 0.9)), url('https://source.unsplash.com/random/1920x1080?office') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 { color: white; font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
+        
+        .hero-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .section-padding { padding: 80px 20px; }
+        .bg-light { background-color: var(--light-bg); }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover { transform: translateY(-5px); }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* --- CONTACT & LOCATION --- */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .contact-info { flex: 1; min-width: 300px; }
+        .map-container { flex: 1; min-width: 300px; height: 400px; }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .info-item i { color: var(--primary-color); font-size: 1.2rem; }
+
+        iframe { width: 100%; height: 100%; border: 0; border-radius: 10px; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Dwise Consultancy</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#book">Book</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-    <a href="#admin">Admin</a>
-  </nav>
-</header>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-layer-group"></i> Dewise
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact" class="cta-button">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
 
-<section id="hero">
-  <h2>Professional Consulting for Your Future</h2>
-  <p>Interview Help • Career Guidance • Visa Support • Financial Consulting • IT Consulting</p>
-  <a href="#contact" class="btn">Contact Us</a>
-</section>
+    <section class="hero" id="hero">
+        <h1>Smart Solutions for Your Business</h1>
+        <p>Dewise helps you navigate complex challenges with ease. We provide top-tier consultancy and digital services tailored to your needs.</p>
+        <a href="#contact" class="hero-btn">Get Started</a>
+    </section>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>Dwise Consultancy offers expert guidance in interview preparation, career planning, visa support, financial consulting, and IT consulting. We provide trusted and personalized solutions for students and professionals.</p>
-</section>
+    <section class="section-padding bg-light" id="services">
+        <div class="section-title">
+            <h2>Our Expertise</h2>
+            <p>Comprehensive services designed for growth and compliance.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Digital Solutions</h3>
+                <p>Modern web and app development services to keep your business ahead of the curve.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Consultancy</h3>
+                <p>Expert advice on compliance, registration, and strategic planning.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Growth Strategy</h3>
+                <p>Data-driven insights to help scale your operations effectively.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="services">
-  <h2>Our Services</h2>
+    <section class="section-padding" id="about">
+        <div class="about-container">
+            <h2>About Dewise</h2>
+            <p>We are a dedicated team of professionals committed to delivering excellence. Like the leading firms in the industry, we prioritize transparency, efficiency, and customer satisfaction. Whether you are a startup or an established enterprise, Dewise is your partner in success.</p>
+        </div>
+    </section>
 
-  <ul class="services-list">
-    <li>📌 Interview Preparation</li>
-    <li>📌 Career Guidance</li>
-    <li>📌 Visa Support</li>
-    <li>📌 Financial Consulting</li>
-    <li>📌 IT Consulting</li>
-  </ul>
-</section>
+    <section class="section-padding bg-light" id="contact">
+        <div class="section-title">
+            <h2>Visit Our Office</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>We are here to assist you. Reach out to us anytime.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Innovation Street, Tech Park, Bangalore, Karnataka 560001</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>support@dewise.com</span>
+                </div>
+            </div>
 
-<section id="book">
-  <h2>Book an Appointment</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.965427593259!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
 
-  <form id="bookForm">
-    <input type="text" placeholder="Full Name" required />
-    <input type="email" placeholder="Email" required />
-    <input type="tel" placeholder="Phone Number" required />
-    <select required>
-      <option value="">Select Service</option>
-      <option>Interview Help</option>
-      <option>Career Guidance</option>
-      <option>Visa Support</option>
-      <option>Financial Consulting</option>
-      <option>IT Consulting</option>
-    </select>
-    <input type="date" required />
-    <button type="submit">Submit Booking</button>
-  </form>
-</section>
-
-<section id="testimonials">
-  <h2>Testimonials</h2>
-  <div class="testimonial">
-    <p>“Dwise Consultancy helped me clear my interview in just one week!”</p>
-    <strong>- Rajesh</strong>
-  </div>
-  <div class="testimonial">
-    <p>“Great visa support. Smooth and fast process.”</p>
-    <strong>- Anitha</strong>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-
-  <form id="enquiryForm">
-    <input type="text" placeholder="Name" required />
-    <input type="email" placeholder="Email" required />
-    <textarea placeholder="Message" required></textarea>
-    <button type="submit">Send Enquiry</button>
-  </form>
-
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-    Chat On WhatsApp
-  </a>
-</section>
-
-<section id="admin">
-  <h2>Admin Dashboard</h2>
-  <p>All enquiries submitted will appear here.</p>
-  <ul id="adminList"></ul>
-</section>
-
-<script src="app.js"></script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
+    <footer>
+        <p>&copy; 2025 Dewise App. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
