@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dwise | Professional Solutions</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
 :root {
@@ -58,8 +58,6 @@ header {
     padding:10px 20px;
     border-radius:5px;
     font-weight:bold;
-    border:none;
-    cursor:pointer;
 }
 
 .hero {
@@ -108,7 +106,7 @@ header {
     color:var(--primary-color);
 }
 
-.job-form {
+.job-form, .subscribe-container {
     max-width:600px;
     margin:auto;
     background:#fff;
@@ -116,8 +114,8 @@ header {
     border-radius:10px;
     box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
-.job-form input,
-.job-form button {
+.job-form input, .job-form button,
+.subscribe-container input, .subscribe-container button {
     width:100%;
     padding:12px;
     margin-bottom:15px;
@@ -131,12 +129,13 @@ header {
     margin:auto;
 }
 .contact-info { flex:1; min-width:280px; }
+.map-container { flex:1; min-width:280px; height:350px; }
 .info-item {
     display:flex;
     gap:15px;
     margin-bottom:15px;
-    align-items:center;
 }
+iframe { width:100%; height:100%; border:0; border-radius:10px; }
 
 footer {
     background:#222;
@@ -186,45 +185,76 @@ footer {
 </div>
 </section>
 
-<section class="section-padding bg-light" id="job">
+<section class="section-padding" id="job">
 <div class="section-title">
-    <h2>LOOKING FOR A JOB</h2>
+    <h2>If You Need a Job</h2>
     <p>Submit your details</p>
 </div>
-
 <form class="job-form">
     <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="Email Address" required>
     <input type="tel" placeholder="Mobile Number" required>
     <input type="file" required>
-     
-    <button type="submit" class="cta-button">Subscribe</button>
+    <button class="cta-button">Submit Application</button>
 </form>
+</section>
+
+<section class="section-padding bg-light">
+<div class="subscribe-container">
+<h2>GET INTO OUR INNER CIRCLE</h2>
+
+<form id="subscribeForm" action="https://formspree.io/f/mkgpdddr" method="POST">
+<input type="hidden" name="_subject" value="New Inner Circle Subscriber - Dwise">
+<input type="email" name="email" placeholder="you@example.com" required>
+<button type="submit" class="cta-button">Subscribe</button>
+</form>
+
+<div id="thanksMessage" style="display:none;">
+<p>Thank you for subscribing!</p>
+</div>
+<div id="errorMessage" style="display:none;color:red;">
+<p>Something went wrong. Try again.</p>
+</div>
+</div>
 </section>
 
 <section class="section-padding" id="contact">
 <div class="section-title"><h2>Visit Our Office</h2></div>
 <div class="contact-container">
-    <div class="contact-info">
-        <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Hoodi Village, Mahadeva Pura, Bangalore – 560048</span>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-phone"></i>
-            <span>+91 9705502157</span>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-envelope"></i>
-            <span>support@dewise.com</span>
-        </div>
-    </div>
+<div class="contact-info">
+    <div class="info-item"><i class="fas fa-map-marker-alt"></i>
+    Hoodi Village, Mahadeva Pura, Bangalore – 560048</div>
+    <div class="info-item"><i class="fas fa-phone"></i> +91 9705502157</div>
+    <div class="info-item"><i class="fas fa-envelope"></i> support@dewise.com</div>
+</div>
+<div class="map-container">
+<iframe src="https://www.google.com/maps?q=12.9716,77.5946&output=embed"></iframe>
+</div>
 </div>
 </section>
 
 <footer>
 <p>&copy; 2025 Dwise. All Rights Reserved.</p>
 </footer>
+
+<script>
+const form=document.getElementById('subscribeForm');
+form.addEventListener('submit',function(e){
+e.preventDefault();
+fetch(form.action,{
+method:'POST',
+body:new FormData(form),
+headers:{'Accept':'application/json'}
+}).then(r=>{
+if(r.ok){
+form.style.display='none';
+document.getElementById('thanksMessage').style.display='block';
+}else{
+document.getElementById('errorMessage').style.display='block';
+}
+});
+});
+</script>
 
 </body>
 </html>
