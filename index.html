@@ -1,305 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dwise | Professional Solutions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dwise | Professional Solutions</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <style>
-        :root {
-            --primary-color: #0056b3;
-            --secondary-color: #004494;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-        }
+<style>
+:root {
+    --primary-color:#0056b3;
+    --secondary-color:#004494;
+    --text-color:#333;
+    --light-bg:#f8f9fa;
+    --white:#ffffff;
+}
+body {
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    margin:0;
+    color:var(--text-color);
+}
+a { text-decoration:none; color:inherit; }
+h1,h2,h3 { color:#2c3e50; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-        }
+header {
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.nav-container {
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+.logo {
+    font-size:24px;
+    font-weight:bold;
+    color:var(--primary-color);
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+.nav-links {
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+.nav-links a:hover { color:var(--primary-color); }
+.cta-button {
+    background:var(--primary-color);
+    color:#fff !important;
+    padding:10px 20px;
+    border-radius:5px;
+    font-weight:bold;
+}
 
-        h1, h2, h3 { color: #2c3e50; }
-        a { text-decoration: none; color: inherit; }
+.hero {
+    background:linear-gradient(rgba(0,86,179,.9),rgba(0,68,148,.9)),
+    url('https://source.unsplash.com/random/1920x1080?office') center/cover;
+    color:#fff;
+    text-align:center;
+    padding:100px 20px;
+}
+.hero h1 { font-size:3rem; }
+.hero p { max-width:700px; margin:auto; }
+.hero-btn {
+    background:#fff;
+    color:var(--primary-color);
+    padding:15px 30px;
+    border-radius:30px;
+    display:inline-block;
+    margin-top:20px;
+    font-weight:bold;
+}
 
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+.section-padding { padding:80px 20px; }
+.bg-light { background:var(--light-bg); }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
+.section-title {
+    text-align:center;
+    margin-bottom:50px;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.services-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+.service-card {
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+.service-icon {
+    font-size:40px;
+    color:var(--primary-color);
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+.job-form, .subscribe-container {
+    max-width:600px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+.job-form input, .job-form button,
+.subscribe-container input, .subscribe-container button {
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+}
 
-        .nav-links a:hover { color: var(--primary-color); }
+.contact-container {
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+}
+.contact-info { flex:1; min-width:280px; }
+.map-container { flex:1; min-width:280px; height:350px; }
+.info-item {
+    display:flex;
+    gap:15px;
+    margin-bottom:15px;
+}
+iframe { width:100%; height:100%; border:0; border-radius:10px; }
 
-        .cta-button {
-            background: var(--primary-color);
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0,86,179,.9), rgba(0,68,148,.9)),
-            url('https://source.unsplash.com/random/1920x1080?office') center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h1 { font-size: 3rem; }
-        .hero p { max-width: 700px; margin: auto; }
-
-        .hero-btn {
-            background: white;
-            color: var(--primary-color);
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .section-padding { padding: 80px 20px; }
-        .bg-light { background: var(--light-bg); }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,.05);
-        }
-
-        .service-icon {
-            font-size: 40px;
-            color: var(--primary-color);
-        }
-
-        .about-container {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .job-form {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.1);
-        }
-
-        .job-form input, .job-form button {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+footer {
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="nav-container">
-        <div class="logo">
-            <i class="fas fa-layer-group"></i> Dwise
-        </div>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#job">Careers</a></li>
-            <li><a href="#job" class="cta-button">Apply Job</a></li>
-        </ul>
-    </div>
+<div class="nav-container">
+    <div class="logo"><i class="fas fa-layer-group"></i> Dwise</div>
+    <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#job">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#job" class="cta-button">Apply Job</a></li>
+    </ul>
+</div>
 </header>
 
 <section class="hero" id="hero">
-    <h1>Smart Solutions for Your Jobs</h1>
-    <p>We help you get the right job with professional guidance.</p>
-    <a href="#job" class="hero-btn">Apply Now</a>
+<h1>Smart Solutions for Your Jobs</h1>
+<p>We help you get the right job with professional guidance.</p>
+<a href="#job" class="hero-btn">Apply Now</a>
 </section>
 
 <section class="section-padding bg-light" id="services">
-    <div class="section-title">
-        <h2>Our Expertise</h2>
+<div class="section-title"><h2>Our Expertise</h2></div>
+<div class="services-grid">
+    <div class="service-card">
+        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Interview Preparation</h3>
     </div>
-
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-            <h3>Interview Preparation</h3>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon"><i class="fas fa-file-contract"></i></div>
-            <h3>Consultancy</h3>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Career Growth</h3>
-        </div>
+    <div class="service-card">
+        <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+        <h3>Consultancy</h3>
     </div>
-</section>
-
-<!-- JOB APPLICATION -->
-<section class="section-padding" id="job">
-    <div class="section-title">
-        <h2>If You Need a Job</h2>
-        <p>Fill the form below and upload your resume</p>
+    <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Career Growth</h3>
     </div>
-
-    <form class="job-form" action="submit-job.php" method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="tel" name="phone" placeholder="Mobile Number" required>
-        <input type="text" name="experience" placeholder="Years of Experience">
-        <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
-
-        <button type="submit" class="cta-button">Submit Application</button>
-    </form>
-</section>
-    <section class="section-padding bg-light" id="contact">
-        <div class="section-title">
-            <h2>Visit Our Office</h2>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>We are here to assist you. Reach out to us anytime.</p>
-                
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Katha No.287, SY No-5,
-Hoodi Village, Mahadeva Pura, KR Pura Hobli, Bangalore, Karnataka- 560048</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 9705502157</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>support@dewise.com</span>
-                </div>
-            </div>
-
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.965427593259!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-   
-<!-- SUBSCRIBE / INNER CIRCLE FEATURE -->
-<div class="subscribe-container" style="max-width:500px; margin:40px auto; text-align:center; padding:0 20px;">
-  <h2>GET INTO OUR INNER CIRCLE</h2>
-
-  <form id="subscribeForm" action="https://formspree.io/f/mkgpdddr" method="POST">
-    <input type="hidden" name="_subject" value="New Inner Circle Subscriber - Dwise">
-
-    <label for="email">Enter your email:</label><br>
-
-    <input type="email" id="email" name="email" required
-           placeholder="you@example.com"
-           style="width:100%; padding:10px; margin:12px 0; box-sizing:border-box; font-size:1em;">
-
-    <button type="submit"
-            style="padding:10px 20px; font-size:1em; background-color:#007BFF; color:white; border:none; border-radius:4px; cursor:pointer;">
-      Subscribe
-    </button>
-  </form>
-
-  <div id="thanksMessage" style="display:none; margin-top:20px;">
-    <p>Thank you for subscribing!</p>
-  </div>
-
-  <div id="errorMessage" style="display:none; margin-top:20px; color:red;">
-    <p>Oops! Something went wrong. Please try again.</p>
-  </div>
 </div>
+</section>
 
-<script>
-  const form = document.getElementById('subscribeForm');
+<section class="section-padding" id="job">
+<div class="section-title">
+    <h2>If You Need a Job</h2>
+    <p>Submit your details</p>
+</div>
+<form class="job-form">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Mobile Number" required>
+    <input type="file" required>
+    <button class="cta-button">Submit Application</button>
+</form>
+</section>
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+<section class="section-padding bg-light">
+<div class="subscribe-container">
+<h2>GET INTO OUR INNER CIRCLE</h2>
 
-    const formData = new FormData(form);
+<form id="subscribeForm" action="https://formspree.io/f/mkgpdddr" method="POST">
+<input type="hidden" name="_subject" value="New Inner Circle Subscriber - Dwise">
+<input type="email" name="email" placeholder="you@example.com" required>
+<button type="submit" class="cta-button">Subscribe</button>
+</form>
 
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-      if (response.ok) {
-        form.style.display = 'none';
-        document.getElementById('thanksMessage').style.display = 'block';
-      } else {
-        throw new Error('Submission failed');
-      }
-    })
-    .catch(error => {
-      document.getElementById('errorMessage').style.display = 'block';
-      console.error(error);
-    });
-  });
-</script>
+<div id="thanksMessage" style="display:none;">
+<p>Thank you for subscribing!</p>
+</div>
+<div id="errorMessage" style="display:none;color:red;">
+<p>Something went wrong. Try again.</p>
+</div>
+</div>
+</section>
 
+<section class="section-padding" id="contact">
+<div class="section-title"><h2>Visit Our Office</h2></div>
+<div class="contact-container">
+<div class="contact-info">
+    <div class="info-item"><i class="fas fa-map-marker-alt"></i>
+    Hoodi Village, Mahadeva Pura, Bangalore – 560048</div>
+    <div class="info-item"><i class="fas fa-phone"></i> +91 9705502157</div>
+    <div class="info-item"><i class="fas fa-envelope"></i> support@dewise.com</div>
+</div>
+<div class="map-container">
+<iframe src="https://www.google.com/maps?q=12.9716,77.5946&output=embed"></iframe>
+</div>
+</div>
+</section>
 
 <footer>
-    <p>&copy; 2025 Dwise. All Rights Reserved.</p>
+<p>&copy; 2025 Dwise. All Rights Reserved.</p>
 </footer>
+
+<script>
+const form=document.getElementById('subscribeForm');
+form.addEventListener('submit',function(e){
+e.preventDefault();
+fetch(form.action,{
+method:'POST',
+body:new FormData(form),
+headers:{'Accept':'application/json'}
+}).then(r=>{
+if(r.ok){
+form.style.display='none';
+document.getElementById('thanksMessage').style.display='block';
+}else{
+document.getElementById('errorMessage').style.display='block';
+}
+});
+});
+</script>
 
 </body>
 </html>
